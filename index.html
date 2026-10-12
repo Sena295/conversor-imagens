@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conversor de Arquivos</title>
+<meta name="description" content="Converta imagens, PDF, planilhas, Word, PowerPoint, áudio e vídeo direto no navegador, sem enviar nada para servidor.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header class="top">
+    <h1>Conversor de <span>Arquivos</span></h1>
+    <p class="sub">Imagens, PDF, planilhas, Word, PowerPoint, áudio e vídeo. Tudo é convertido no seu navegador: nenhum arquivo sai do seu computador.</p>
+  </header>
+
+  <ol class="steps">
+    <li><b>1</b>Escolha os arquivos</li>
+    <li><b>2</b>Escolha o formato</li>
+    <li><b>3</b>Clique em Baixar</li>
+  </ol>
+
+  <label class="drop" id="drop">
+    <input type="file" id="input" multiple>
+    <span class="drop-icon" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/>
+      </svg>
+    </span>
+    <strong>Arraste seus arquivos aqui</strong>
+    <span>ou <u>clique para escolher</u> · também dá para colar com Ctrl+V</span>
+  </label>
+
+  <section class="panel hidden" id="panel">
+    <div class="toolbar">
+      <div class="opts" id="opts">
+        <label id="cutoutWrap" class="check" title="Deixa o fundo transparente. Funciona melhor com logos e fundos de uma cor só.">
+          <input type="checkbox" id="cutout"> Remover fundo
+        </label>
+        <label id="toleranceWrap">Sensibilidade
+          <input type="range" id="tolerance" min="1" max="100" value="30">
+        </label>
+        <label id="trimWrap" class="check">
+          <input type="checkbox" id="trim" checked> Cortar sobras
+        </label>
+        <label id="qualityWrap">Qualidade
+          <input type="range" id="quality" min="10" max="100" value="90">
+          <output id="qualityOut">90%</output>
+        </label>
+        <label id="bgWrap">Cor de fundo
+          <input type="color" id="bg" value="#ffffff" title="Usada no lugar das áreas transparentes">
+        </label>
+      </div>
+      <div class="actions">
+        <button id="downloadAll" class="primary">Baixar todos (.zip)</button>
+        <button id="mergePdf" class="hidden">Juntar imagens em um PDF</button>
+        <button id="clear" class="ghost">Limpar</button>
+      </div>
+    </div>
+    <ul id="list"></ul>
+  </section>
+
+  <section class="url-card">
+    <h2>Extrair áudio de um link</h2>
+    <p class="hint">Cole o link de um vídeo do YouTube, Instagram, TikTok, X, SoundCloud, Facebook e muitos outros sites.</p>
+    <form class="url-row" id="urlForm">
+      <input type="url" id="urlInput" placeholder="https://www.youtube.com/watch?v=..." required autocomplete="off">
+      <select id="urlFormat" aria-label="Formato do áudio">
+        <option value="mp3">MP3</option>
+        <option value="m4a">M4A</option>
+        <option value="wav">WAV</option>
+      </select>
+      <button class="primary" id="urlBtn">Extrair áudio</button>
+    </form>
+    <p class="url-status" id="urlStatus"></p>
+  </section>
+
+  <section class="formats">
+    <h2>O que dá para converter</h2>
+    <div class="grid" id="formats"></div>
+    <p class="note">PPT e DOC antigos (antes de 2007) e HEIC de iPhone não podem ser convertidos no navegador. Abra no Office e salve como PPTX, DOCX ou PDF primeiro.</p>
+  </section>
+</main>
+<footer>Feito com HTML + JavaScript · hospedado no GitHub Pages</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
