@@ -49,19 +49,6 @@ Nenhum arquivo é enviado para servidor: tudo acontece no seu computador.
 
 Acesse **https://sena295.github.io/conversor-imagens/**, escolha os arquivos, o formato de cada um e clique em **Baixar**.
 
-### No seu computador (com extração de áudio por link)
-
-Requisitos: [Node.js](https://nodejs.org/), [yt-dlp](https://github.com/yt-dlp/yt-dlp) e [ffmpeg](https://ffmpeg.org/).
-
-```bash
-winget install yt-dlp.yt-dlp Gyan.FFmpeg
-git clone https://github.com/Sena295/conversor-imagens.git
-cd conversor-imagens
-node servidor.js
-```
-
-Abra **http://localhost:8075**. O servidor aceita conexões apenas do próprio computador.
-
 > Sites com DRM (Spotify, Netflix, Deezer) não são suportados. Baixe apenas conteúdo que você tem direito de usar.
 
 ## Estrutura
