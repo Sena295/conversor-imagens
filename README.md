@@ -49,8 +49,6 @@ Nenhum arquivo é enviado para servidor: tudo acontece no seu computador.
 
 Acesse **https://sena295.github.io/conversor-imagens/**, escolha os arquivos, o formato de cada um e clique em **Baixar**.
 
-> Sites com DRM (Spotify, Netflix, Deezer) não são suportados. Baixe apenas conteúdo que você tem direito de usar.
-
 ## Estrutura
 
 ```
