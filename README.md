@@ -49,6 +49,18 @@ Nenhum arquivo é enviado para servidor: tudo acontece no seu computador.
 
 Acesse **https://sena295.github.io/conversor-imagens/**, escolha os arquivos, o formato de cada um e clique em **Baixar**.
 
+### Localmente (modo local)
+
+Com [Node.js](https://nodejs.org/) instalado, o servidor local entrega o site e habilita a extração de áudio de links:
+
+```bash
+git clone https://github.com/Sena295/conversor-imagens.git
+cd conversor-imagens
+node servidor.js          # abre em http://localhost:8075 (use `node servidor.js 9000` para outra porta)
+```
+
+A extração de áudio de links também exige [yt-dlp](https://github.com/yt-dlp/yt-dlp) e [ffmpeg](https://ffmpeg.org/) instalados. Sem eles, o restante do conversor funciona normalmente.
+
 ## Estrutura
 
 ```
@@ -76,6 +88,14 @@ As bibliotecas são carregadas sob demanda, só quando um formato precisa delas:
 
 Imagens, BMP, ICO, WAV e a remoção de fundo usam apenas APIs nativas do navegador (Canvas e Web Audio).
 
+## Pacotes
+
+Este projeto não tem dependências npm: as bibliotecas da tabela acima são carregadas no navegador sob demanda, e o `servidor.js` usa apenas módulos nativos do Node. Não publica pacotes.
+
 ## Licença
 
-Distribuído sob a licença [MIT](LICENSE).
+Distribuído sob a licença **MIT**. Veja [LICENSE](LICENSE).
+
+## Autor
+
+Desenvolvido por **Carlos Sena**, [@Sena295](https://github.com/Sena295).
